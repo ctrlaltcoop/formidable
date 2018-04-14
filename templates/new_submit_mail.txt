@@ -1,0 +1,7 @@
+Hello!
+
+Your website form at {{ referrer }} was submitted with the following data:
+
+{% for field, value in form.items() %}
+    {{ field }}: {{ value }}
+{% endfor %}
