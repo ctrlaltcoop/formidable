@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 Flask-Mail = "*"
+uwsgi = "*"
 
 [dev-packages]
 ipdb = "*"
-
