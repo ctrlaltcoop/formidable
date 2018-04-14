@@ -27,3 +27,7 @@ def submit():
     mail.send(message)
 
     return redirect(next_page)
+
+
+if __name__ == '__main__':
+    app.run()
