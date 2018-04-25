@@ -23,7 +23,6 @@ def submit():
                       recipients=app.config.get('MAIL_RECIPIENTS'),
                       reply_to=originator if originator != 'unknown' else None
                       )
-    print(app.config)
     mail.send(message)
 
     return redirect(next_page)
