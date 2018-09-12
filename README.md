@@ -9,8 +9,6 @@ Prerequisites
 - python3
 - [pipenv](https://docs.pipenv.org/)
 
-Any python3 
-
 What is it?
 -------------
 
@@ -22,7 +20,7 @@ Run it
 
 ```
 $ pipenv install
-$ pipenv run FLASK_APP=formidable.py flask run
+$ FLASK_APP=formidable.py pipenv run flask run
 ```
 
 Configure
@@ -46,6 +44,17 @@ Just create an HTML-Form similar to this:
     <input type="text" name="name" placeholder="Your Name">
     <input type="text" name="message" placeholder="Type your message">
 </form>
+```
+You may want to define a GOTCHA_FIELD in the config and add it to your form.
+If the form is submitted with text filled into the field the mail will not be sent.
+This aims to prevent spam.
+
+If a message is not sent because of this the (presumed) bot will be redirected to SPAM_PAGE_DEFAULT or 
+THANKYOU_PAGE_DEFAULT if SPAM_PAGE_DEFAULT is not set. 
+
+Example for GOTCHA_FIELD "fname":
+```
+<input type="text" name="fname" placeholder="First Name" style="display:none">
 ```
 
 Deployment
@@ -84,6 +93,14 @@ server {
 }
 ```
 
+Development
+-----------
+Set your environment variables in *.env*  
+Presumably your file will look like this:
+```
+FLASK_ENV = development
+FLASK_DEBUG = 1
+```
 
 Roadmap
 --------
