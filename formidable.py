@@ -4,7 +4,7 @@ from os import environ
 
 
 app = Flask(__name__)
-app.config.from_object('config.default')
+app.config.from_object('config.local')
 settings = environ.get('FORMIDABLE_SETTINGS_MODULE', None)
 if settings:
     app.config.from_object(settings)
