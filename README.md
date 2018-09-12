@@ -102,6 +102,12 @@ FLASK_ENV = development
 FLASK_DEBUG = 1
 ```
 
+You may want to use __curl__ to send a message:
+```
+curl -d "name=fupduck&message=my%20message." -X POST http://127.0.0.1:5000/submit
+```
+
+
 Roadmap
 --------
 
